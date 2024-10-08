@@ -22,6 +22,14 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         {
             return View();
         }
+        public IActionResult Formulario()
+        {
+            return View();
+        }
+        public IActionResult Carrusel()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
