@@ -30,6 +30,10 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         {
             return View();
         }
+        public IActionResult Suma()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
