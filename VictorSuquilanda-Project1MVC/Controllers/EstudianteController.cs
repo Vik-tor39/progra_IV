@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using VictorSuquilanda_Project1MVC.Models;
 
 namespace VictorSuquilanda_Project1MVC.Controllers
 {
@@ -8,12 +9,12 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         // GET: EstudianteController
         public ActionResult Index()
         {
-            Estudiante estud = new Estudiante
+            Estudiante estudiante = new Estudiante
             {
-                Id = 10,
+                Id = 20,
                 Name = "Víctor"
             };
-            return View();
+            return View(estudiante);
         }
 
         // GET: EstudianteController/Details/5

@@ -15,12 +15,12 @@ function Sumar() {
     document.getElementById("resultado").value = suma;
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('#sumar').click(function () {
-        var num1 = $("numero1").val;
-        var num2 = $("numero2").val;
+        var num1 = $("#numero1").val();
+        var num2 = $("#numero2").val();
 
         var sum = parseInt(num1) + parseInt(num2);
-        $('resultado').val(sum);
-    }
-}
+        $("#resultado").val(sum);
+    });
+});
