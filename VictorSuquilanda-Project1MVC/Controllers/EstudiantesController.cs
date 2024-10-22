@@ -22,7 +22,8 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         // GET: Estudiantes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Estudiante.ToListAsync());
+            var victorSuquilanda_Project1MVCContext = _context.Estudiante.Include(e => e.Carrera);
+            return View(await victorSuquilanda_Project1MVCContext.ToListAsync());
         }
 
         // GET: Estudiantes/Details/5
@@ -34,6 +35,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
             }
 
             var estudiante = await _context.Estudiante
+                .Include(e => e.Carrera)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (estudiante == null)
             {
@@ -46,6 +48,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         // GET: Estudiantes/Create
         public IActionResult Create()
         {
+            ViewData["IdCarrera"] = new SelectList(_context.Set<Carrera>(), "Id");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Edad,BornDate")] Estudiante estudiante)
+        public async Task<IActionResult> Create([Bind("Id,Name,Edad,BornDate,IdCarrera")] Estudiante estudiante)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdCarrera"] = new SelectList(_context.Set<Carrera>(), "Id", "Id", estudiante.IdCarrera);
             return View(estudiante);
         }
 
@@ -86,7 +90,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Edad,BornDate")] Estudiante estudiante)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Edad,BornDate,IdCarrera")] Estudiante estudiante)
         {
             if (id != estudiante.Id)
             {
@@ -113,6 +117,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdCarrera"] = new SelectList(_context.Set<Carrera>(), "Id", "Id", estudiante.IdCarrera);
             return View(estudiante);
         }
 
@@ -125,6 +130,7 @@ namespace VictorSuquilanda_Project1MVC.Controllers
             }
 
             var estudiante = await _context.Estudiante
+                .Include(e => e.Carrera)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (estudiante == null)
             {
