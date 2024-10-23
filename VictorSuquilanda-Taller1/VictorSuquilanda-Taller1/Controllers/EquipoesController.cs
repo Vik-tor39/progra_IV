@@ -22,7 +22,8 @@ namespace VictorSuquilanda_Taller1.Controllers
         // GET: Equipoes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Equipo.ToListAsync());
+            var victorSuquilanda_TallerContext = _context.Equipo.Include(e => e.Estadio);
+            return View(await victorSuquilanda_TallerContext.ToListAsync());
         }
 
         // GET: Equipoes/Details/5
@@ -34,6 +35,7 @@ namespace VictorSuquilanda_Taller1.Controllers
             }
 
             var equipo = await _context.Equipo
+                .Include(e => e.Estadio)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (equipo == null)
             {
@@ -46,6 +48,7 @@ namespace VictorSuquilanda_Taller1.Controllers
         // GET: Equipoes/Create
         public IActionResult Create()
         {
+            ViewData["IdEstadio"] = new SelectList(_context.Set<Estadio>(), "Id", "Id");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace VictorSuquilanda_Taller1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Equipo equipo)
+        public async Task<IActionResult> Create([Bind("Id,Name,Ciudad,Titulos,AceptaExtranjeros,IdEstadio")] Equipo equipo)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace VictorSuquilanda_Taller1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IdEstadio"] = new SelectList(_context.Set<Estadio>(), "Id", "Id", equipo.IdEstadio);
             return View(equipo);
         }
 

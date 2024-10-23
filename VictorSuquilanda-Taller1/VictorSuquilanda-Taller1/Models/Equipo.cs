@@ -17,7 +17,7 @@ namespace VictorSuquilanda_Taller1.Models
         public int Titulos { get; set; }
         [Required]
         public Boolean AceptaExtranjeros {  get; set; }
-        public Estadio Estadio { get; set; }
+        public Estadio? Estadio { get; set; }
         [ForeignKey("Estadio")]
         public int IdEstadio { get; set; }
     }
