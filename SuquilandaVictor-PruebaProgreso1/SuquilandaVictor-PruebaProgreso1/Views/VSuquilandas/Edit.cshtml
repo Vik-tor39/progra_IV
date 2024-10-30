@@ -6,7 +6,7 @@
 
 <h1>Edit</h1>
 
-<h4>VSuquilanda</h4>
+<h4>Usuarios</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,49 +14,56 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+                <label asp-for="Name" class="control-label">Nombre</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Edad" class="control-label"></label>
                 <input asp-for="Edad" class="form-control" />
                 <span asp-validation-for="Edad" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Fondos" class="control-label"></label>
                 <input asp-for="Fondos" class="form-control" />
                 <span asp-validation-for="Fondos" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Correo" class="control-label"></label>
                 <input asp-for="Correo" class="form-control" />
                 <span asp-validation-for="Correo" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ComproCelular" /> @Html.DisplayNameFor(model => model.ComproCelular)
+                    <input class="form-check-input" asp-for="ComproCelular" /> Usted compro su celular?
                 </label>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <label asp-for="FechaNacimiento" class="control-label">Fecha de nacimiento</label>
                 <input asp-for="FechaNacimiento" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="TotalCelulares" class="control-label"></label>
+                <label asp-for="TotalCelulares" class="control-label">Cuantos celulares ha tenido en su vida?</label>
                 <input asp-for="TotalCelulares" class="form-control" />
                 <span asp-validation-for="TotalCelulares" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar</a>
 </div>
 
 @section Scripts {

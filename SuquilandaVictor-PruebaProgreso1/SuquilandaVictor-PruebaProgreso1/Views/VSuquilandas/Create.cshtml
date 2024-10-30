@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Agregar Información</h1>
 
-<h4>VSuquilanda</h4>
+<h4>Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -17,11 +17,13 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Edad" class="control-label"></label>
                 <input asp-for="Edad" class="form-control" />
                 <span asp-validation-for="Edad" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Fondos" class="control-label"></label>
                 <input asp-for="Fondos" class="form-control" />
@@ -35,15 +37,16 @@
             <br>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="ComproCelular" /> @Html.DisplayNameFor(model => model.ComproCelular)
+                    <input class="form-check-input" asp-for="ComproCelular" /> Usted compro su celular?
                 </label>
             </div>
             <br>
             <div class="form-group">
                 <label asp-for="FechaNacimiento" class="control-label">Fecha de nacimiento</label>
-                <input asp-for="FechaNacimiento" class="form-control" />
+                <input asp-for="FechaNacimiento" type="date" class="form-control" />
                 <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="TotalCelulares" class="control-label">Cuantos celulares ha tenido en su vida?</label>
                 <input asp-for="TotalCelulares" class="form-control" />

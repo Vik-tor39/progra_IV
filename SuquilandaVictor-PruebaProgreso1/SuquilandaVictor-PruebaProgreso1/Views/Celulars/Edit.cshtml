@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar Información</h1>
 
 <h4>Celular</h4>
 <hr />
@@ -18,35 +18,40 @@
                 <input asp-for="Modelo" class="form-control" />
                 <span asp-validation-for="Modelo" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="Fabricando" class="control-label"></label>
+                <label asp-for="Fabricando" class="control-label">Fabricante</label>
                 <input asp-for="Fabricando" class="form-control" />
                 <span asp-validation-for="Fabricando" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Anio" class="control-label"></label>
                 <input asp-for="Anio" class="form-control" />
                 <span asp-validation-for="Anio" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
                 <label asp-for="Precio" class="control-label"></label>
                 <input asp-for="Precio" class="form-control" />
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <label asp-for="IdVSuquilanda" class="control-label"></label>
+                <label asp-for="IdVSuquilanda" class="control-label">Usuario</label>
                 <select asp-for="IdVSuquilanda" class="form-control" asp-items="ViewBag.IdVSuquilanda"></select>
                 <span asp-validation-for="IdVSuquilanda" class="text-danger"></span>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar</a>
 </div>
 
 @section Scripts {

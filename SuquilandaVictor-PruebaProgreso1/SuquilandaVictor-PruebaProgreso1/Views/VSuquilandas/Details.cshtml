@@ -7,11 +7,11 @@
 <h1>Details</h1>
 
 <div>
-    <h4>VSuquilanda</h4>
+    <h4>Usuario</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            Nombre
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Name)
@@ -35,19 +35,19 @@
             @Html.DisplayFor(model => model.Correo)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ComproCelular)
+            Usted compro su celular?
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ComproCelular)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaNacimiento)
+            Fecha de nacimiento
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.FechaNacimiento)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalCelulares)
+            Cuantos celulares ha tenido en su vida?
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.TotalCelulares)
@@ -56,5 +56,5 @@
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar</a>
 </div>
