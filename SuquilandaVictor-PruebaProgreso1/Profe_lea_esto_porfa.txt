@@ -1,0 +1,4 @@
+Hola profe, tal vez sea innecesario pero quería dejarle unas indicaciones que tienen que ver con mi proyecto, solo por si acaso:
+En el "appsettings.jason", al momento de definir la base de datos tuve que hacer unos cambios para poder acceder a la basa desde mi pc. Resulta que el servidor no es "localhost", sino que en mi caso se definió como "localhost\\sqlexpress"; entonces
+quería pedirle que, por favor, defina el servidor nuevamente como "localhost" para que no ocurran problemas al momento de correr el proyecto desde su equipo.
+Muchas gracias de antemano por su comprensión profe, y disculpe las molestias. 
